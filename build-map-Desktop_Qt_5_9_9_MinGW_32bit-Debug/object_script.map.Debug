@@ -1,0 +1,17 @@
+INPUT(
+./debug\close.o
+./debug\input.o
+./debug\main.o
+./debug\menu.o
+./debug\route_quote.o
+./debug\search_list.o
+./debug\search_quote.o
+./debug\widget.o
+./debug\moc_close.o
+./debug\moc_input.o
+./debug\moc_launchlabel.o
+./debug\moc_menu.o
+./debug\moc_redpoint.o
+./debug\moc_search_list.o
+./debug\moc_widget.o
+);

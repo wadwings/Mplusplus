@@ -1,0 +1,17 @@
+INPUT(
+./release\close.o
+./release\input.o
+./release\main.o
+./release\menu.o
+./release\route_quote.o
+./release\search_list.o
+./release\search_quote.o
+./release\widget.o
+./release\moc_close.o
+./release\moc_input.o
+./release\moc_launchlabel.o
+./release\moc_menu.o
+./release\moc_redpoint.o
+./release\moc_search_list.o
+./release\moc_widget.o
+);
