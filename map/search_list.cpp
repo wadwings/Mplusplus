@@ -23,8 +23,10 @@ void searchlist::load_list(){
     }
     this->setResizeMode(Adjust);
     if(i == 1){
-        if(organization.at(t->at(i-1)) == text->toPlainText().toStdString())
+        if(organization.at(t->at(i-1)) == text->toPlainText().toStdString()){
             this->resize(0,0);
+            send_text(text->toPlainText().toStdString());
+        }
         else
             this->resize(200, 21);
     }

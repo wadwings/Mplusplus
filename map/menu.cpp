@@ -1,5 +1,4 @@
 #include "menu.h"
-#include "launchlabel.h"
 menu::menu(QWidget * parent, vector<string> o) : QLabel(parent), o(o)
 {
     this->setText("菜单");
@@ -25,3 +24,17 @@ menu::menu(QWidget * parent, vector<string> o) : QLabel(parent), o(o)
     connect(search, SIGNAL(onmousePress()), this, SLOT(slots_mousePressEvent()));
     connect(guide, SIGNAL(onmousePress()), this, SLOT(slots_mousePressEvent()));
 }
+
+void menu::slots_mousePressEvent(){
+    if(search->isVisible()){
+        search->hide();
+        guide->hide();
+    }else{
+        search->show();
+        guide->show();
+    }
+}
+
+void menu::mousePressEvent(QMouseEvent *ev){
+    slots_mousePressEvent();
+};

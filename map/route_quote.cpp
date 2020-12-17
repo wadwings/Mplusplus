@@ -1,6 +1,7 @@
 #include <route_quote.h>
 
-route_quote::route_quote(QWidget * parent, vector<string> o):QWidget(parent), o(o){
+route_quote::route_quote(QWidget * parent, vector<string> organization):QWidget(parent), o(organization)\
+                        /*, route(new routeHandler(organization, loco, position, parent, bluepoint, yellowpoint))*/{
     this->resize(600,250);
     this->setStyleSheet("background-color: white");
         this->move((parent->width() - 600) / 2, (parent->height() - 250) / 2);
@@ -19,4 +20,29 @@ route_quote::route_quote(QWidget * parent, vector<string> o):QWidget(parent), o(
     tag->show();
     begin->show();
     end->show();
+    QObject::connect(begin, SIGNAL(send_text(string)), route, SLOT(setbegin(string)));
+    QObject::connect(end, SIGNAL(send_text(string)), route, SLOT(setend(string)));
 };
+
+void route_quote::mousePressEvent( QMouseEvent *e )
+{
+    if ( e->button() == Qt::LeftButton ) {
+        _mousePressed = true;
+        _mousePosition = e->pos();
+    }
+}
+
+void route_quote::mouseMoveEvent( QMouseEvent *e )
+{
+    if ( _mousePressed ) {
+        move( mapToParent( e->pos() - _mousePosition ) );
+    }
+}
+
+void route_quote::mouseReleaseEvent( QMouseEvent *e )
+{
+    if ( e->button() == Qt::LeftButton ) {
+        _mousePressed = false;
+        _mousePosition = QPoint();
+    }
+}

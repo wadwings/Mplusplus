@@ -2,7 +2,6 @@
 #define CLOSE_H
 #include <QObject>
 #include <QtWidgets>
-
 class closetag: public QLabel
 {
     Q_OBJECT

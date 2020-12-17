@@ -1,8 +1,9 @@
+#ifndef __INPUT__
+#define __INPUT__
 #include <QObject>
 #include <QtWidgets>
 #include <iostream>
-#ifndef __INPUT__
-#define __INPUT__
+
 class input : public QTextEdit{
     Q_OBJECT
 public:

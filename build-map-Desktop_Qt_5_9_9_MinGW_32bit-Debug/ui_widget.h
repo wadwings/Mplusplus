@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,26 +21,12 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
-    QLabel *label;
-    QLabel *label_2;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
-        Widget->resize(1676, 840);
-        label = new QLabel(Widget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(0, 20, 1676, 820));
-        label->setFrameShape(QFrame::NoFrame);
-        label->setFrameShadow(QFrame::Plain);
-        label->setPixmap(QPixmap(QString::fromUtf8("../resources/map.bmp")));
-        label->setScaledContents(true);
-        label->setAlignment(Qt::AlignCenter);
-        label_2 = new QLabel(Widget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(1090, 330, 20, 20));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("C:/Users/WADwi/Downloads/giphy.gif")));
+        Widget->resize(1676, 860);
 
         retranslateUi(Widget);
 
@@ -51,8 +36,6 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
-        label->setText(QString());
-        label_2->setText(QString());
     } // retranslateUi
 
 };

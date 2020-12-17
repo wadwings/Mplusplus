@@ -17,9 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     close.cpp \
+    graph.cpp \
     input.cpp \
+    launchlabel.cpp \
     main.cpp \
+    map.cpp \
     menu.cpp \
+    redpoint.cpp \
     route_quote.cpp \
     routehandler.cpp \
     search_list.cpp \
@@ -28,8 +32,11 @@ SOURCES += \
 
 HEADERS += \
     close.h \
+    global_var.h \
+    graph.h \
     input.h \
     launchlabel.h \
+    map.h \
     menu.h \
     redpoint.h \
     route_quote.h \

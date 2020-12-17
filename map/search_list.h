@@ -1,10 +1,11 @@
+#ifndef __SEARCHLIST__
+#define __SEARCHLIST__
 #include <QObject>
 #include <QtWidgets>
 #include <iostream>
 #include <input.h>
 using namespace std;
-#ifndef __SEARCHLIST__
-#define __SEARCHLIST__
+
 class searchlist : public QListWidget{
     Q_OBJECT
 public:
@@ -18,6 +19,8 @@ public slots:
     void focus_detect();
     void out_focus();
     void testOnDoubleClicked(QListWidgetItem *item);
+signals:
+    void send_text(string s);
 private:
     int lcs_2(string str1, string str2);
     vector<int>* lcs_1(vector<string> vs, string str);

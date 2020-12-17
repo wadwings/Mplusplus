@@ -3,6 +3,7 @@
 #include <QtWidgets>
 #include <vector>
 #include <string>
+#include "launchlabel.h"
 using namespace std;
 class menu : public QLabel
 {
@@ -13,19 +14,9 @@ public:
     vector<string> o;
     menu(QWidget * parent = nullptr, vector<string> o = {""});
 public slots:
-    void slots_mousePressEvent(){
-            if(search->isVisible()){
-            search->hide();
-            guide->hide();
-        }else{
-            search->show();
-            guide->show();
-        }
-    }
+    void slots_mousePressEvent();
 protected:
-    void mousePressEvent(QMouseEvent *ev) override{
-        slots_mousePressEvent();
-    };
+    void mousePressEvent(QMouseEvent *ev) override;
 };
 
 
